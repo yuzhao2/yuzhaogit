@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>下拉选联动效果</title>
+		<script type="text/javascript">
+			var cities = [["秦皇岛","唐山","石家庄"],
+			              ["哈尔滨","佳木斯","齐齐哈尔"],
+			              ["青岛","济南","烟台"],
+			              ["临汾","太原","大同"]];
+			
+			function changeAction(){
+				
+				//清空第二个下拉选
+				s2.innerHTML = "<option>请选择</option>";
+				
+				//alert(s1.value);
+				var arr = cities[s1.value];
+				//alert(arr);
+				
+				//如果选择的省份为“请选择”则得到的arr为undefined
+				//不过undefined转成布尔值 正好是false 所以可以如下写法
+				if(arr){
+					for(var i=0;i<arr.length;i++){
+						//得到每一个城市名称
+						var city = arr[i];
+						//创建option
+						var opt = document.createElement("option");
+						//把城市名称显示到option中
+						opt.innerText = city;
+						//把option添加到第二个下拉选中
+						s2.appendChild(opt);
+						
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<select id="s1" onchange="changeAction()">
+			<option>请选择</option>
+			<option value="0">河北</option>
+			<option value="1">黑龙江</option>
+			<option value="2">山东</option>
+			<option value="3">山西</option>
+		</select>
+		<select id="s2">
+			<option>请选择</option>
+		</select>
+	</body>
+</html>

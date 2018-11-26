@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript"
+			src="js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript">
+			function addfn(){
+				//得到用户输入的内容
+				var name = $("input:eq(0)").val()
+				var age = $("input:eq(1)").val()
+				var sal = $("input:eq(2)").val()
+				//先创建tr
+				var $tr = $("<tr></tr>")
+				//创建4个td
+				var $nametd = $("<td>"+name+"</td>")
+				var $agetd = $("<td>"+age+"</td>")
+				var $saltd = $("<td>"+sal+"</td>")
+				//创建删除按钮的td
+				var $deltd = 
+					$("<td><input type='button' value='删除'onclick='delfn(this)'></td>")
+				//把所有td装进tr
+				$tr.append($nametd)
+				$tr.append($agetd)
+				$tr.append($saltd)
+				$tr.append($deltd)
+				//把tr装进table里面
+				$("table").append($tr)
+					
+			}
+			function delfn(btn){
+				//通过按钮得到上级td在得到上级tr 然后删掉
+				$(btn).parent().parent().remove();
+				
+			}
+		</script>
+	</head>
+	<body align="center">
+		<input type="text" placeholder="姓名">
+		<input type="text" placeholder="年龄">
+		<input type="text" placeholder="工资">
+		<input type="button" value="添加" onclick="addfn()">
+		<hr>
+		<table align="center" width="50%" border="1">
+			<tr>
+				<th>姓名</th><th>年龄</th>
+				<th>工资</th><th>操作</th>
+			</tr>
+		</table>
+	</body>
+</html>

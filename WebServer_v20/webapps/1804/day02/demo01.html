@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<img src="../imgs/1.jpg" width="400px"
+		usemap="#mymap">
+	<!-- shape:表示形状
+		coords:表示坐标 前两个值是圆心坐标 最后一个是半径
+		href:连接地址
+	-->
+	<map name="mymap" id="mymap" >
+	
+		<!-- area:区域 -->
+		<area shape="circle" coords="200,150,50" 
+			href="../imgs/2.jpg">
+		<!-- rect:矩形 -->
+		<area shape="rect" coords="0,0,150,150"
+			href="../imgs/1.gif">
+			
+	</map>
+	
+	<img src="../imgs/3.jpg" width="500px" 
+		height="500px" usemap="mymaps">
+	
+	<map name="mymaps" id="mymaps">
+		
+		<area shape="rect" coords="0,0,100,100"
+			href="http://doc.tedu.cn">
+			
+		<area shape="circle" coords="250,250,50"
+			href="day01-am.zip">
+	
+	</map>
+</body>
+</html>

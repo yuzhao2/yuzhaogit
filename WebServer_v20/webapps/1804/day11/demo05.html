@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>键盘事件</title>
+		<script type="text/javascript">
+		
+			function downfn(){
+				//得到键盘上的字符编码	不同的浏览器存在兼容性问题
+				var code = event.keyCode||event.which;
+				
+				//把字符编码转成字符
+				var str = String.fromCharCode(code);
+				console.log("键盘按下"+str);
+			}
+			
+			function upfn(){
+				console.log("键盘松开");
+			}
+			
+			onload = function(){
+				//匿名形式函数
+				mybtn.onclick = function(){
+					alert("动态绑定事件成功！"+this);
+				}
+			}
+			
+			function clickfn(){
+				alert("非动态绑定事件成功！"+this);
+			}
+			
+		</script>
+	</head>
+	<body>
+		<input type="text" onkeydown="downfn()" onkeyup="upfn()">
+		<input type="button" id="mybtn" value="动态绑定">
+		<input type="button" onclick="clickfn()" value="非动态绑定">
+	</body>
+</html>

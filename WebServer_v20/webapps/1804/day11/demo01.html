@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>小游戏</title>
+		<style type="text/css">
+			/*	添加背景图片 */	
+			body{
+				margin: 0px;/*	去掉默认外边距	*/
+				background-image: url("../zombimgs/bj.jpg");
+				/* 不重复	*/
+				background-repeat: no-repeat;
+			}
+			
+			#successh3{
+				float: left;
+			}
+			#failedh3{
+				float: right;
+			}
+			img{
+				width: 166px;
+				height: 144px;
+				position: absolute;
+				/* 通过背景图片 设置显示内容	*/
+				/* background-image: url("../imgs/1.jpg");
+				background-size: 30px 30px; */
+			}
+			
+		</style>
+		
+		<script type="text/javascript">
+			//记录成功次数的变量
+			var successCount = 0;
+			//记录失败次数的变量
+			var failedCount = 0;
+			
+			//页面加载完时设置背景图片的尺寸
+			onload = function(){
+				changeBGSize();
+			}
+			
+			//当页面尺寸发生改变的时候执行此事件
+			onresize = function(){
+				changeBGSize();
+			}
+			
+			//获取body的尺寸	
+			function changeBGSize(){
+				//获取body的宽度
+				var w = document.body.clientWidth;
+				//获取body上级HTML的高
+				//因为body内容高度为0(都脱离文档流了)
+				var h = document.body.parentElement.clientHeight;
+				//设置背景图片的尺寸为当前窗口的尺寸
+				document.body.style.backgroundSize = w+"px "+h+"px";
+			}
+			
+			//创建添加图片的定时器
+			setInterval(function(){
+				//创建图片元素
+				var img = document.createElement("img");
+				//通过src属性设置显示内容
+				img.src="../zombimgs/zomb"+parseInt(Math.random()*4)+".png";
+				
+				//获取body上级HTML的高
+				//因为body内容高度为0(都脱离文档流了)
+				var h = document.body.parentElement.clientHeight-144;
+				
+				//设置图片随机的top值
+				img.style.top = parseInt(Math.random()*h)+"px";
+				img.style.left = document.body.clientWidth-166+"px";
+				//给元素动态绑定事件		函数名不带括号()
+				img.onmouseover = removefn;
+				
+				
+				document.body.appendChild(img);
+			},1000)
+			
+			//删除图片的函数
+			function removefn(){
+				//alert("图片被点击了"+this);
+				//把图片自身删除掉
+				this.parentElement.removeChild(this);
+				//记录成功的次数并显示
+				successCount++;
+				successh3.innerText = "成功次数:"+successCount;
+			}
+			
+			//开启移动图片的定时器
+			setInterval(function(){
+				//得到所有的图片
+				var imgs = document.getElementsByTagName("img");
+				//遍历每张图片
+				for(var i=0;i<imgs.length;i++){
+					var img = imgs[i];
+					//得到图片的left
+					var oldLeft = parseInt(img.style.left);
+					//让成功次数和移动速度建立关系 会越来越快
+					oldLeft -=2+parseInt(successCount/20);
+					img.style.left = oldLeft+"px";
+					//判断图片有没有出界
+					if(oldLeft<=0){
+						img.parentElement.removeChild(img);
+						//失败次数+1
+						failedCount++;
+						failedh3.innerText = "失败次数:"+failedCount;
+					}
+				}
+			},10)
+		</script>
+	</head>
+	<body>
+			<h3 id="successh3">成功次数：0</h3>
+			<h3 id="failedh3">失败次数：0</h3>
+	</body>
+</html>

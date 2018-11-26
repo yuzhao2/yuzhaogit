@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>表单练习</title>
+</head>
+<body>
+	<h2>表单练习</h2>
+	<!-- action：提交地址 
+		placeholder:占位文本
+	-->
+	<form action="">
+		用户名:<input type="text" name="username" 
+		value="" placeholder="说点儿什么。。。" 
+		maxlength="5" ><br>
+		密码 :<input type="password" password="password"><br>
+		性别:<input type="radio" name="gender" value="男"
+					id="nan"><label for="nan">男</label>
+			<input type="radio" name="gender" value="女"
+					id="nv"><label for="nv">女</label><br>
+		兴趣爱好:<input type="checkbox" name="hobby" value="lq"
+					id="lq"><label for="lq">打篮球</label>
+			<input type="checkbox" name="hobby" value="wz"
+					id="wz"><label for="wz">王者农药</label>
+			<input type="checkbox" name="hobby" value="cy"
+					id="cy"><label for="cy">穿越火线</label>
+			<input type="checkbox" name="hobby" value="dx"
+					id="dx"><label for="dx">地下城勇士</label>
+			<input type="checkbox" name="hobby" value="dy"
+					id="dy"><label for="dy">看电影</label>
+			<input type="checkbox" name="hobby" value="yy"
+					id="yy"><label for="yy">听音乐</label>
+			<input type="checkbox" name="hobby" value="ks"
+					id="ks"><label for="ks">看书</label>
+			<input type="checkbox" name="hobby" value="pp"
+					id="pp"><label for="pp">打乒乓球</label>
+			<input type="checkbox" name="hobby" value="cj"
+					id="cj"><label for="cj">吃鸡</label><br>
+		靓照:<input type="file" name="pic"><br>
+		生日:<input type="date" name="birthday"><br>
+		<!-- 隐藏域 用户看不见 -->
+		隐藏域:<input type="hidden" name="id" value="123"><br>
+		
+		个人简介:<textarea rows="3" cols="20" 
+				name="intro">这家伙很懒。。。。</textarea><br>
+		所在城市:<select name="city">
+				<option>请选择</option>
+				<option value="sx">山西</option>
+				<option value="sx">陕西</option>
+				<option value="sh">上海</option>
+				<option value="gz">广州</option>
+				<option value="bj">北京</option>
+				<option value="js">江苏</option>
+				<option value="hn">海南</option>
+				<option value="gx">广西</option>
+				<option value="hn">湖南</option>
+			</select><br>
+		<input type="submit" value="注册">
+		<input type="reset"><!-- 重置按钮 -->
+		<input type="button" value="自定义按钮">	
+			
+	</form>
+
+
+</body>
+</html>

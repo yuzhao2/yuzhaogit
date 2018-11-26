@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			.c1{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: relative;
+				text-align: left;
+				float: left;
+				margin: 2px;
+				
+			}
+			.c2{
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+				float: left;
+				margin: 2px;
+			}
+		</style>
+		<script type="text/javascript">
+			function fnred(){
+				var div = document.getElementById("big");
+				div.innerHTML+="<div class='c1'></div>"
+			}
+			function fnblue(){
+				var div = document.getElementById("big");
+				div.innerHTML+="<div class='c2'></div>"
+			}
+			function fn(c){
+				var div = document.getElementById("big");
+				div.innerHTML+="<div class='"+c+"'></div>"
+			}
+			
+		</script>
+	</head>
+	<body>
+		<input onclick="fn('c1')" type="button" class="c1">
+		<input onclick="fn('c2')" type="button"  class="c2">
+		<div id="big">
+			
+		</div>
+	</body>
+</html>

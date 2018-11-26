@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<!-- 假轮播图 -->
+		<style type="text/css">
+			img{
+				width: 150px;
+				height: 100px;
+				display: none;/*	页面加载时 全部隐藏	*/
+			}
+		</style>
+		<script type="text/javascript">
+		
+			//页面加载完执行
+			onload = function(){
+				//执行换图片的函数
+				changeImg();
+			}
+			
+			//准备自增的变量
+			var count = 0;
+			//开启每隔两秒执行的定时器
+			setInterval(function(){
+				//执行换图片的函数
+				changeImg();
+			},2000);
+			
+			/*	切换图片的函数	*/
+			function changeImg(){
+				//通过取余得到0-4 并且循环得到
+				var visibleIndex = count++%5;
+				//验证visibleIndex的取值
+				//console.log(visibleIndex);
+				//得到页面中所有的图片元素
+				var imgs = document.getElementsByTagName("img");
+				//遍历每一个图片
+				for(var i=0;i<imgs.length;i++){
+					var img = imgs[i];
+					//判断当前遍历图片的位置是显示还是隐藏
+					if(i==visibleIndex){//显示此张图片
+						img.style.display="inline";
+					}else{//隐藏此张图片 脱离文档流
+						img.style.display="none";
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<img alt="" src="../imgs/1.jpg" width="100px">
+		<img alt="" src="../imgs/2.jpg" width="100px">
+		<img alt="" src="../imgs/3.jpg" width="100px">
+		<img alt="" src="../imgs/4.jpg" width="100px">
+		<img alt="" src="../imgs/5.jpg" width="100px">
+	</body>
+</html>

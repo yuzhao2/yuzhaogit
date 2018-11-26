@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件传递</title>
+		<script type="text/javascript">
+			function btnfn(){
+				alert("按钮事件");
+				/*	停止事件传递	*/
+				event.stopPropagation();
+			}
+			function pfn(){
+				alert("p事件");
+			}
+			function divfn(){
+				alert("div事件");
+			}
+			
+			function myfn(){
+				//得到事件源
+				var obj = event.target||event.srcElement;
+				//弹出事件源的标签名
+				alert(obj.nodeName);
+				
+			}
+		</script>
+		<style type="text/css">
+			div{
+				border: 1px solid red;
+			}
+			p{
+				border: 1px solid green;
+			}
+		</style>
+	</head>
+	<body>
+	<!-- 如果同一区域有多个事件响应，响应顺序类似气泡
+		先执行底层元素事件在执行上级元素事件
+	 -->
+		<!-- <div onclick="divfn()">
+			<p onclick="pfn()">
+				<input type="button" value="按钮" onclick="btnfn()">
+			</p>
+		</div> -->
+		<div onclick="myfn()">
+			<p>
+				<input type="button" value="按钮">
+			</p>
+		</div>
+	</body>
+</html>

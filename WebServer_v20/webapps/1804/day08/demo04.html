@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			/*	日期相关函数	*/
+			//获取客户端	当前时间
+			//var date = new Date();
+			//alert(date);
+			
+			//创建时间对象	指定时间	
+			//指定的时间通常是从服务器获取到的时间
+			var date = new Date("2018/07/05 12:24:38");
+			//alert(date);
+			
+			//获取和设置时间戳 	距离1970年1月1号 08:00:00点的毫秒数
+			//alert(date.getTime());//获取
+			//date.setTime(1000);//设置毫秒数
+			//alert(date);
+			
+			//获取日期对象中的 年 月 日 时 分 秒 星期
+			/* alert(date.getFullYear());//年
+			alert(date.getMonth()+1);//月份需要+1
+			alert(date.getDate());//日
+			alert(date.getHours());//时
+			alert(date.getMinutes());//分
+			alert(date.getSeconds());//秒
+			alert(date.getDay());//星期 */
+			
+			//从日期对象中 获取年月日和获取时分秒
+			alert(date.toLocaleDateString());
+			alert(date.toLocaleTimeString());
+			
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

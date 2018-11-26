@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" 
+		src="jq/js/jquery-1.4.2.min.js"></script>
+		
+		<script type="text/javascript">
+			
+			//js原生加载完成事件
+			//onload = function(){};
+			
+			//jq加载完成写法  复杂版
+			/* $(document).ready(function(){
+				
+			}); */
+			
+			//简单版 加载完成事件
+			$(function(){//jQuery 等同于 $  两种方式功能一样
+				//alert("hello jq!");
+				
+				//给按钮绑定点击事件
+				//id选择器
+				$("#btn").click(function(){
+					//得到文本框里面的内容
+					//alert($("#myinput").val());
+					var input = document.getElementById("myinput");
+					//把js对象input 转成jq的对象
+					var $input = $(input);
+					alert($input.val());
+				});
+				
+				$("#btn2").click(function(){
+					var $input = $("#myinput");
+					//alert($input.val());
+					//把jq对象转成js对象 jq对象本身就是一个数组，而
+					//数组里面的第一个对象就是js对象
+					var js1 = $input[0];
+					var js2 = $input.get(0);
+					
+					alert(js1.value+":"+js2.value);
+					
+				})
+			});
+			
+			
+		</script>
+	</head>
+	<body>
+		<input type="text" id="myinput">
+		<input type="button" value="jstojq按钮" id="btn">
+		<input type="button" value="jqtojs按钮" id="btn2">
+	</body>
+</html>

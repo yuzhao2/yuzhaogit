@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+		/*	
+			浮动定位	元素脱离文档流	元素可以在当前行内左侧或右侧
+			浮动	当撞到父元素边框或另一个浮动元素是停止
+			如果一行装不下会自动换行	换行时注意有可能会被卡住	
+		*/
+			#big{
+				width: 300px;
+				border: 1px solid red;
+				/*
+					如果元素内部所有子元素全部浮动 此时高度为0
+					可以通过给父元素添加overflow ： hidden 解决此问题
+				*/
+				overflow: hidden;
+			}
+			#s1{
+				width: 110px;
+				height: 130px;
+				background-color: red;
+				float: left;
+			}
+			#s2{
+				width: 110px;
+				height: 110px;
+				background-color: yellow;
+				/*	left 左则不允许浮动
+					right 右侧不允许浮动
+					both 两则都不允许浮动
+				*/
+				float: left;
+				
+			}
+			#s3{
+				width: 110px;
+				height: 110px;
+				background-color: blue;
+				float: left;
+			}
+				
+		</style>
+	</head>
+	<body>
+		<div id="big">
+			<div id="s1"></div>
+			<div id="s2"></div>
+			<div id="s3"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			#big{
+				width: 500px;
+				height: 500px;
+				border: 1px solid red;
+				overflow: hidden;
+			}
+			.red{
+				width: 30px;
+				height: 30px;
+				background-color: red;
+				margin: 3px;
+				display: inline-block;
+			}
+		</style>
+		<script type="text/javascript">
+			function fn(){
+				var a = document.getElementById("number1");
+				var b = document.getElementById("number2");
+				var div = document.getElementById("big");
+				for(var i=0; i<a.value; i++){
+					div.innerHTML+="<div class='red'></div>"
+					for(var j=1; j<b.value; j++){
+						div.innerHTML+="<div class='red'></div>"
+					}
+					div.innerHTML+="<div></div>"
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="number1" placeholder="行数">
+		<input type="text" id="number2" placeholder="个数">
+		<input type="button" onclick="fn()" value="添加">
+		<div id="big">
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript"
+		src="jq/js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript">
+			
+			function fn1(){
+				//创建一个li
+				var $li = $("<li>深圳</li>");
+				//添加到ul当中
+				$("ul").append($li);
+			}
+			
+			function fn2(){
+				//创建一个li
+				var $li = $("<li>天津</li>");
+				//插入到ul中上海后面
+				//$("#sh").after($li);
+				//插入到ul中上海前面面
+				$("#sh").before($li);
+				
+			}
+			
+			function fn3(){
+				//删除元素自身
+				//$("#sh").remove();
+				//找到所有的li 删除里面的#sh
+				$("li").remove("#sh");
+			}
+			
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>北京</li>
+			<li id="sh">上海</li>
+			<li>广州</li>
+		</ul>
+		<input type="button" value="添加" onclick="fn1()">
+		<input type="button" value="插入" onclick="fn2()">
+		<input type="button" value="删除" onclick="fn3()">
+	</body>
+</html>

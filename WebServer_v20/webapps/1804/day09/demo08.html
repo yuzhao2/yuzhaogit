@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<style type="text/css">
+			div{
+				width: 30px;
+				height: 30px;
+				background-color: red;
+			}
+		</style>
+		<script type="text/javascript">
+			/* onload = function(){
+				mydiv.style.marginLeft = "0px";
+			}
+			onclick = function(){
+				var left = parseInt(mydiv.style.marginLeft);
+				if(isNaN(left)){
+					left=0;
+				}
+				left +=10;
+				mydiv.style.marginLeft = left+"px";
+			} */
+			
+			onclick = function(){
+				//取到当前的位置+10后 设置回去
+				//1. 得到当前位置 
+				var currentleft = mydiv.style.marginLeft;
+				//因为第一次获取的时候 没有内联左外边距所以得到的是""
+				if(currentleft==""){
+					currentleft="0px";
+				}
+				//把带px的字符串转成数值
+				var left = parseInt(currentleft);
+				//偏移10个像素
+				left +=10;
+				//把得到的新值放回去
+				mydiv.style.marginLeft = left+"px";
+			}
+			/*	定时器	*/
+			setInterval(function(){
+				var currentleft = mydiv.style.marginLeft;
+				//因为第一次获取的时候 没有内联左外边距所以得到的是""
+				if(currentleft==""){
+					currentleft="0px";
+				}
+				//把带px的字符串转成数值
+				var left = parseInt(currentleft);
+				//偏移10个像素
+				left +=1;
+				//把得到的新值放回去
+				mydiv.style.marginLeft = left+"px";
+			},10);
+			
+		</script>
+	</head>
+	<body>
+		<div id="mydiv"></div>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			//点击事件
+			onclick = function(){
+				//创建元素li
+				var myLi = document.createElement("li");
+				//给li添加内容
+				myLi.innerText = "天津";
+				//把li添加到ul中
+				//得到ul
+				var myUl = document.getElementsByTagName("ul")[0];
+				//把元素添加到所有元素的后面
+				//myUl.appendChild(myLi);
+				
+				//把元素插入到某个元素的前面
+				//得到弟弟元素
+				var shli = document.getElementById("sh");
+				myUl.insertBefore(myLi,shli);
+				
+			}
+			//函数
+			function myfn(){
+				//删除元素 需要得到被删除的元素和父元素
+				var sh = document.getElementById("sh");
+				//得到父元素
+				/* var myUl = document.getElementsByTagName("ul")[0];
+				myUl.removeChild(sh); */
+				
+				//通过元素自己得到上级 然后删除
+				sh.parentElement.removeChild(sh);
+				
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="删除" onclick="myfn()">
+		<ul>
+			<li>北京</li>
+			<li id="sh">上海</li>
+			<li>广州</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function add(){
+				big.style.color = "blue";
+				big.style.border = "1px solid blue";
+				
+			}
+			//设置初始值
+			var str = 30;
+			onclick = function(){
+				//每次点击增10
+				str+= 10;
+				//把得到的新值放进去
+				small.style.marginLeft = str+"px";
+			}
+		</script>
+		<style type="text/css">
+			#small{
+				width: 30px;
+				height: 30px;
+				background-color: green;
+				margin-left: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="添加样式" onclick="add()">
+		<div id="big">德玛西亚</div>
+		<div id="small"></div>
+	</body>
+</html>

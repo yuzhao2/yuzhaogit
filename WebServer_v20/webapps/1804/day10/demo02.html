@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			div,img{
+				width: 150px;
+				height: 100px; 
+			}
+			div{
+				position: relative;/*	相对定位	为了做图片的位置参考	*/
+				overflow: hidden;
+			}
+			img{
+			/*	定位方式改成绝对定位 因为要把图片横向排列	*/
+				position: absolute;
+			}
+		</style>
+		<script type="text/javascript">
+			//页面加载完成时  让图片位置初始化 
+			onload = function(){
+				//得到页面当中所有图片
+				var imgs = document.getElementsByTagName("img");
+				//遍历图片
+				for(var i=0;i<imgs.length;i++){
+					var img = imgs[i];
+					//让图片一次平铺开
+					img.style.left = i*150+"px";
+				}
+			}
+			
+			/* onclick = function(){
+				moveImg();
+			} */
+			
+			//设置一个新的定时器  2秒调用一次图片的函数 实现轮播效果
+			/* var timeId = setInterval(function(){
+				moveImg();
+			},2000) */
+			
+			var timeId;
+			
+			//停止每隔两秒执行的定时器
+			function stop(){
+				clearInterval(timeId);
+			}
+			
+			//重启定时器
+			function start(){
+				
+				//为了保证2秒执行一次的定时器 只有一个
+				//每次开始前都停止以下
+				clearInterval(timeId);
+				
+				//开启定时器
+				timeId = setInterval(function(){
+					moveImg();
+				},3000)
+			}
+			
+			//因为执行start的时候并没有获取页面中的元素
+			//所以可以不写onload里面
+			start();
+			
+			//页面获取到焦点的时候开启移动图片的定时器
+			onfocus = function(){
+				start();
+			}
+			
+			//页面时区焦点的时候  停止定时器
+			onblur = function(){
+				stop();
+			}
+			
+			
+			//换一张图片的函数
+			function moveImg(){
+				
+				//开启定时器 移动图片 
+				var moveId = setInterval(function(){
+					//得到所有图片
+					var imgs = document.getElementsByTagName("img");
+					for(var i=0;i<imgs.length;i++){
+						var img = imgs[i];
+						//取出原来的位置 "" 0px 150px 300px
+						//parseInt  相当于去掉了px
+						var oldLeft = parseInt(img.style.left);
+						oldLeft -=5;
+						//当图片移出div时 把图片放回到到最后一张的位置
+						if(oldLeft<=-150){
+							oldLeft = 300;
+							//让定时器停止
+							clearInterval(moveId);
+						}
+						//把移动完后的位置设置给图片
+						img.style.left = oldLeft+"px";
+					}
+				},1000/30);
+			}
+		</script>
+	</head>
+	<body>
+	<!-- 给div添加 鼠标移上和移出的两个事件 -->
+		<div onmouseover="stop()" onmouseout="start()">
+			<img alt="" src="../imgs/1.jpg">
+			<img alt="" src="../imgs/2.jpg">
+			<img alt="" src="../imgs/3.jpg">
+		</div>
+	</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h2>层级列表</h2>
+<dl><!-- define list 定义列表 -->
+	<dt>一级标题</dt><!-- define title 定义标题 -->
+	<dd>数据内容</dd><!-- define data 定义数据 -->
+	<dd>数据内容</dd>
+	<dd>数据内容</dd>
+	<dd>数据内容</dd>
+	<dt>一级标题</dt>
+	<dd>数据内容</dd>
+	<dd>数据内容</dd>
+	<dd>数据内容</dd>
+	<dd>数据内容</dd>
+</dl>
+
+<h2>餐单</h2>
+<dl>
+	<dt>凉菜</dt>
+		<dd>夫妻肺片</dd>
+		<dd>老醋花生</dd>
+		<dd>拍黄瓜</dd>
+	<dt>炒菜</dt>
+		<dd>宫保鸡丁</dd>
+		<dd>地三鲜</dd>
+	<dt>炖菜</dt>
+		<dd>东北乱炖</dd>
+		<dd>西红柿牛腩</dd>
+</dl>
+
+<h2>无序列表</h2>
+<ul type="circle">	<!-- type控制显示样式 
+			none:没有样式	disc:默认实心圆
+			circle:空心圆	square:方块实心-->
+	<li>列表项1</li>
+	<li>列表项2</li>
+	<li>列表项3</li>
+</ul>
+
+<h2>掌握技能</h2>
+<ul>
+	<li>胸口碎大石</li>
+	<li>英语八级</li>
+	<li>最强王者</li>
+	<li>把把吃鸡</li>
+	<li>魔鬼筋肉人</li>
+</ul>
+
+<h2>有序列表</h2>
+<ol type="1">	<!-- type的值：1:默认数字,a:小写字母,
+				A:大写字母,i:小写罗马字母,I:大写罗马字符 -->
+	<li>列表项1</li>
+	<li>列表项2</li>
+	<li>列表项3</li>
+</ol>
+<h2>把大象装冰箱分几步</h2>
+<ol	start="5">	<!-- start开始 -->
+	<li>打开冰箱门</li>
+	<li>把大象装进去</li>
+	<li>把冰箱门关上</li>
+</ol>
+
+
+<h2>列表嵌套餐单</h2>
+
+<ul>
+	<li>凉菜</li>
+	<ol>
+		<li>拍黄瓜</li>
+		<li>老醋花生</li>
+	</ol>
+	<li>炒菜</li>
+	<ol>
+		<li>烧茄子</li>
+		<li>西红柿炒鸡蛋</li>
+	</ol>
+	<li>炖菜</li>
+	<ol>
+		<li>水煮肉片</li>
+		<li>东北乱炖</li>
+	</ol>
+
+</ul>
+<h2>三层嵌套</h2>
+<ol>
+	<li>Java基础</li>
+	<ul type="circle">
+		<li>变量</li>
+		<li>数据类型</li>
+		<li>运算符</li>
+		<li>流程控制</li>
+			<ul type="disc">
+			  <li>if</li>
+			  <li>switch</li>
+			  <li>while</li>
+			  <li>for</li>
+			</ul>
+	</ul>
+	<li>面向对象</li>
+	<li>JavaAPI</li>
+	
+	
+</ol>
+
+<h2>订单管理</h2>
+<ul type="none">
+
+	<li>我的订单</li>
+		<ul type="none">
+			<li>全部订单</li>
+			<li>待付款</li>
+			<li>待收货</li>
+			<li>待评价</li>
+			<li>退货退款</li>
+		</ul>
+	
+	<li>我的优惠劵</li>
+	
+	<li>收货地址</li>
+		<ul	type="none">
+		  <li>地址管理</li>
+		</ul>
+	
+	<li>账号管理</li>
+		<ul	type="none">
+		  <li>我的信息</li>
+		  <li>安全管理</li>
+		</ul>
+
+</ul>
+
+</body>
+</html>

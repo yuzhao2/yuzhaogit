@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<!-- DHTML简介
+			Dynamic(动态)HTML,这并不是新的技术，只是使用HTML+CSS
+				得到一个动态页面效果称为DHTML
+			DHTML:包含	DOM BOM
+			BOM： Browser(浏览器) Object(对象) Model(模型)
+				
+			DOM： Document(文档) Object(对象) Model(模型)
+				
+		 -->
+		<script type="text/javascript">
+			/*	第一种	通过声明函数的形式创建对象	*/
+			/* 创建一个带参构造器函数	*/
+			/* function Person(name,age){
+				//声明属性
+				this.name = name;
+				this.age = age;
+				
+				//声明方法
+				this.run = function(){
+					alert("name:"+name+",age:"+age);
+				}
+				
+			}
+			
+			//创建对象
+			var p1 = new Person("李白",38);
+			
+			//调用对象的方法
+			p1.run();　*/
+			
+			/*	创建一个空对象	*/
+			/* function Person(){}
+			var p1 = new Person();
+			p1.name = "刘备";
+			p1.age = 18;
+			p1.run = function(){
+				alert("name:"+this.name+",age:"+this.age);
+			}
+			
+			p1.run(); */
+			
+			/* 第二种	以声明变量的形式创建对象	*/
+			var p = {
+					"name":"曹操",
+					"age":18,
+					"run":function(){
+						alert("name:"+this.name+",age:"+this.age);
+					}
+			}
+			
+			p.run();
+			
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

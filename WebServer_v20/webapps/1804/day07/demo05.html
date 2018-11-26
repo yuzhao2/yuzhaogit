@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function fn1(){
+				//得到用户输入的数
+				var input1 = document.getElementById("number1");
+				var input2 = document.getElementById("number2");
+				var n1 = input1.value;
+				var n2 = input2.value;
+				//得到显示结果的div
+				var div = document.getElementById("resultdiv");
+				//判断内容是否是数字
+				if(isNaN(n1)||isNaN(n2)){
+					div.innerText="输入信息有误";
+				}else{//是数字
+					div.innerText= parseFloat(n1)+parseFloat(n2);
+				}
+			}
+			function fn2(){
+				//得到用户输入的数
+				var input1 = document.getElementById("number1");
+				var input2 = document.getElementById("number2");
+				var n1 = input1.value;
+				var n2 = input2.value;
+				//得到显示结果的div
+				var div = document.getElementById("resultdiv");
+				//判断内容是否是数字
+				if(isNaN(n1)||isNaN(n2)){
+					div.innerText="输入信息有误";
+				}else{//是数字
+					div.innerText= parseFloat(n1)-parseFloat(n2);
+				}
+			}
+			function fn3(){
+				//得到用户输入的数
+				var input1 = document.getElementById("number1");
+				var input2 = document.getElementById("number2");
+				var n1 = input1.value;
+				var n2 = input2.value;
+				//得到显示结果的div
+				var div = document.getElementById("resultdiv");
+				//判断内容是否是数字
+				if(isNaN(n1)||isNaN(n2)){
+					div.innerText="输入信息有误";
+				}else{//是数字
+					div.innerText= parseFloat(n1)*parseFloat(n2);
+				}
+			}
+			function fn4(){
+				//得到用户输入的数
+				var input1 = document.getElementById("number1");
+				var input2 = document.getElementById("number2");
+				var n1 = input1.value;
+				var n2 = input2.value;
+				//得到显示结果的div
+				var div = document.getElementById("resultdiv");
+				//判断内容是否是数字
+				if(isNaN(n1)||isNaN(n2)){
+					div.innerText="输入信息有误";
+				}else{//是数字
+					div.innerText= parseFloat(n1)/parseFloat(n2);
+				}
+			}
+			/*	把四个函数合一个		*/
+			function fn5(flag){
+				//得到用户输入的数
+				var input1 = document.getElementById("number1");
+				var input2 = document.getElementById("number2");
+				var n1 = input1.value;
+				var n2 = input2.value;
+				//得到显示结果的div
+				var div = document.getElementById("resultdiv");
+				//判断内容是否是数字
+				if(isNaN(n1)||isNaN(n2)){
+					div.innerText="输入信息有误";
+				}else{//是数字
+					var result=0;
+					switch(flag){
+					case 1:
+						result=div.innerText= parseFloat(n1)+parseFloat(n2);
+						break;
+					case 2:
+						result=div.innerText= parseFloat(n1)-parseFloat(n2);
+						break;
+					case 3:
+						result=div.innerText= parseFloat(n1)*parseFloat(n2);
+						break;
+					case 4:
+						result=div.innerText= parseFloat(n1)/parseFloat(n2);
+						break;
+					}
+					// 把结果显示到div中
+					div.innerText=result;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input id="number1" type="text">
+		<input id="number2" type="text"><br>
+		<input type="button" value="加" onclick="fn5(1)">
+		<input type="button" value="减" onclick="fn5(2)">
+		<input type="button" value="乘" onclick="fn5(3)">
+		<input type="button" value="除" onclick="fn5(4)">
+		<div id="resultdiv">
+			
+		</div>
+	</body>
+</html>

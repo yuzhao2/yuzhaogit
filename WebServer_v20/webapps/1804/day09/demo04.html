@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			/*	窗口点击事件	*/
+			window.onclick = function(){
+				alert("屏幕被点击了！");
+			}
+			/*	页面加载完成时事件	*/
+			/*	如果页面加载完对某些元素进行操作的话 就需要使用此事件	*/
+			onload = function(){
+				alert("加载完成了！");
+				var input = document.getElementById("myinput");
+				input.value = "abcd";
+			}
+			
+			//以下代码存在获取不到元素的问题 因为页面还没有加载完
+			/* var input = document.getElementById("myinput");
+			input.value = "abcd" */
+			
+			/*	焦点可以理解成页面的激活状态	
+				如果有需求每次离开页面和每次回到页面时做某些事
+				则把代码写在这两个事件中
+			*/
+			onfocus = function(){
+				console.log("页面焦点来了");
+			}
+			
+			onblur = function(){
+				console.log("页面焦点走了");
+			}
+			
+		</script>
+	</head>
+	<body>
+		<input type="text" id="myinput">
+		
+	</body>
+</html>

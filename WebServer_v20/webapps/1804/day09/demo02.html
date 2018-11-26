@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			.ok{
+				/*	如何让元素隐藏
+					1.脱离文档流隐藏
+					display: none;
+					2.不脱离文档流隐藏
+					visibility: hidden;
+				*/
+				display: none;	
+			}
+			.error{
+				visibility: visible;
+				color: red;
+			}
+			
+		</style>
+		<script type="text/javascript">
+			function checkun(){
+				//得到用户输入的用户名
+				var username = 
+					document.getElementById("username").value;
+				//创建正则表达式
+				var reg = /^\w{6,10}$/;
+				//得到用户名span
+				var unspan = document.getElementById("unspan");
+				//判断
+				if(reg.test(username)){
+					unspan.className = "ok";
+					return true;
+				}else{
+					unspan.className = "error";
+					return false;
+				}
+				
+			}
+			function checkpw(){
+				//得到用户输入的密码
+				var password = 
+					document.getElementById("password").value;
+				//创建正则表达式
+				var reg = /^\w{6,10}$/;
+				//得到密码span
+				var pwspan = document.getElementById("pwspan");
+				//判断
+				if(reg.test(password)){
+					pwspan.className = "ok";
+					return true;
+				}else{
+					pwspan.className = "error";
+					return false;
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+	<form action="http://www.tmooc.cn"
+		onsubmit="return checkun()+checkpw()==2">
+		<input type="text" id="username" onblur="checkun()">
+			<span id="unspan" class="ok">用户名格式不正确</span><br>
+		<input type="password" id="password" onblur="checkpw()">
+			<span id="pwspan" class="ok">密码格式不正确</span><br>
+		<input type="submit" value="登录" >
+	</form>
+	</body>
+</html>

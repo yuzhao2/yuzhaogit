@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			body{
+				font: 12px "simhei", Arial, Helvetica, sans-serif;
+			    color: #666;
+			    /*去掉元素自带的内外边距*/
+			    margin: 0px;
+			    padding: 0px;
+			    /*页面的背景颜色*/
+			    background-color: #f5f5f5;
+			}
+			
+			/*	带背景图的大的div	*/
+			#form_div{
+				width: 100%;
+				height: 560px;
+				background-image: url("../images/regist.png");
+			}
+			/*	半透明表单面板	*/
+			#form_panel{
+				width: 264px;
+				padding: 8px;
+				background-color: rgba(0,0,0,0.3);
+				float: right;
+				margin: 120px 111px 0 0;
+				color: white;
+			}
+			/*	欢迎登录学子商城	*/
+			#form_panel h2{
+				margin: 0;
+				padding: 8px;
+				border-bottom: 1px solid white;
+			}
+			/*	新用户注册	*/
+			#form_panel h2 a{
+				color: white;
+				text-decoration: none;
+				font-size: 15px;
+				float: right;
+				font-weight: normal;/*去掉加粗	*/
+				position: relative;
+				top: 3px;
+			}
+			/*	装着输入框图片文本的div	用户名和密码	*/
+			.field{
+				margin: 10px 0;
+				position: relative;/*相对定位	给图片位置做参考	*/
+			}
+			/*	*/
+			.field input{
+				width: 224px;/*	264-内边距2*20	*/
+				padding: 10px 20px;
+				border: 0;/*	去掉文本框默认边框	*/
+			}
+			/*	蓝色图片	*/
+			.field img{
+				position: absolute;/*	绝对定位	*/
+				top: 5px;
+				right: 20px;
+			}
+			/*	红色文字样式	*/
+			.field p{
+				color: red;
+				margin: 5px 0;
+			}
+			/*	忘记密码一行样式	*/
+			#save_div a{
+				color: white;
+				text-decoration: none;
+				float: right;
+			}
+			/*	自动登录文本	*/
+			#save_div label{
+				position: relative;
+				bottom: 3px;
+			}
+			/*	登录按钮	*/
+			#login_btn{
+				width: 264px;
+				height: 35px;
+				color: #fff;
+				background-color: #27b0f6;
+				border: 0;
+				border-redius: 5px;
+			}
+			
+/*	*******************服务相关内容***************** */
+			
+			/* 大的div	*/
+			#service_div{
+				width: 1000px;
+				margin: 0 auto;
+				overflow: hidden;
+				padding: 20px 0;
+				
+			}
+			/* 四个小的div	*/
+			#service_div div{
+				width: 250px;
+				float: left;
+				text-align: center;/* 让图片和超链接继承居中效果*/
+			}
+			/*	超链接a	*/
+			#service_div div a{
+				display: block;
+				text-decoration: none;
+				color: #666;
+			}
+		</style>
+	</head>
+	<body>
+		<article>
+		<!-- 显示背景图片的大的div -->
+			<div id="form_div">
+			<!-- 半透明的小的div -->
+				<div id="form_panel">
+					<h2>登录学子商城<a href="#">新用户注册</a></h2>
+					<div class="field">
+						<input type="text" 
+							placeholder="请输入用户名">
+						<img alt="" src="../images/login/yhm.png">
+						<p>用户名不能为空！</p>
+					</div>
+					<div class="field">
+						<input type="password" 
+							placeholder="请输入密码">
+						<img alt="" src="../images/login/mm.png">
+						<p>密码不能为空！</p>
+					</div>
+					<!-- 忘记密码一行的内容 -->
+					<div id="save_div">
+						<input type="checkbox" id="save">
+						<label for="save">自动登录</label>
+						<a href="#">忘记密码</a>
+					</div>
+					<!-- 登录按钮 -->
+					<div>
+						<input id="login_btn" type="submit" value="登录">
+					</div>
+				</div>
+			</div>
+			<!-- 服务相关内容 -->
+			<div id="service_div">
+				<div>
+					<img alt="" src="../images/footer/icon1.png">
+					<a href="#">品质保障</a>
+				</div>
+				<div>
+					<img alt="" src="../images/footer/icon2.png">
+					<a href="#">私人订制</a>
+				</div>
+				<div>
+					<img alt="" src="../images/footer/icon3.png">
+					<a href="#">学员特供</a>
+				</div>
+				<div>
+					<img alt="" src="../images/footer/icon4.png">
+					<a href="#">专属特权</a>
+				</div>
+			</div>
+		</article>
+	</body>
+</html>

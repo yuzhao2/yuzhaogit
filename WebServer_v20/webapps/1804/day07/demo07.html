@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<!-- <style type="text/css">
+			#big{
+				width: 300px;
+				height: 300px;
+				position: relative;
+				overflow: hidden;
+			}
+			.c{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+		</style>
+		<script type="text/javascript">
+			function fn(){
+				var div = document.getElementById("big");
+				for(var i=1;i<10,i++){
+					switch(i){
+					case 1:
+					case 3:
+					case 5:
+					case 7:
+					case 9:
+						div.innerHTML="<div class='c'></div>"
+						break;
+					case 2:
+					case 4:
+					case 6:
+					case 8:
+						div.innerHTML="<div class='c' background-color: blue;></div>"
+						break;
+					}
+			}
+		</script> -->
+		<style type="text/css">
+			#big{
+				width: 300px;
+				height: 300px;
+				border: 1px solid red;
+				overflow: hidden;
+			}
+			.red{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				float: left;
+			}
+			.blue{
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+				float: left;
+			}
+		</style>
+		<script type="text/javascript">
+			function fn(){
+				var big = document.getElementById("big");
+				for(var i=0;i<9;i++){
+					if(i%2==0){//1 3 5 7 9
+						big.innerHTML+="<div class='red'></div>"
+					}else{//2 4 6 8
+						big.innerHTML+="<div class='blue'></div>"
+					}
+				}	
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" onclick="fn()" id="input" value="点我试试">
+		<div id="big">
+			
+		</div>
+	</body>
+</html>

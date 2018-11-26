@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			/*	声明无参无返回值的函数	*/
+			function fn1(){
+				alert("fn1 执行");
+			}
+			/*	调用函数	*/
+			fn1();
+			
+			/*	有参无返回值的函数	*/
+			function fn2(name,age){
+				alert("name:"+name+"age:"+age);
+			}
+			/*	调用	*/
+			fn2("小明",18);
+			
+			/*	有参有返回值的函数	*/
+			function fn3(x,y){
+				return x+y;
+			}
+			/*	调用	*/
+			var result = fn3(1,2);
+			alert(result);
+			
+			/*	声明一个被按钮调用的函数	*/
+			function fn4(){
+				alert("我是被按钮调用的函数");
+			}
+			
+			/*	第二种写法声明函数	*/
+			var fn5 = function(){
+				alert("fn5()执行了");
+			}
+			/*	调用方式只有一种		*/
+			fn5();
+		</script>
+	</head>
+	<body>
+		<input type="button" onclick="fn4()" value="点点我试试">
+		<input type="text" id="myinput">
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	/*
+	CSS的三大特性
+	继承性：
+		子元素可以继承父元素的部分属性，只能继承color/font-开头/
+		text-开头/line-开头这些属性，不仅仅子元素可以继承，所有后代
+		元素都可以继承
+	层叠性：
+		通过不同的选择器 可以多次指向同一个元素。
+		如果设置的属性不同全部生效。 
+		如果作用的相同属性则依据下面的优先级控制哪一个生效
+	优先级：
+		是否直接选中：继承相当于间接选中，直接选中优先级高
+		如果是相同选择器：后执行的生效
+		如果是不同选择器：作用范围越小 优先级越高	
+		优先级：id>class>标签名>继承>元素默认效果
+		
+		继承中：超链接<a> 字体颜色 下划线都不受继承影响，h1-h6 字体大小
+		不受影响
+	*/
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			img{
+				width: 50px;
+				height: 50px;
+				/*	
+					垂直对齐方式
+					top 上对齐
+					bottom 下对齐
+					middle 中间对齐
+					baseline 基线对齐（默认）
+				*/
+				vertical-align: top;
+			}
+			span{
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<img alt="" src="../imgs/1.jpg"><span>meinvtupian</span>
+	</body>
+</html>

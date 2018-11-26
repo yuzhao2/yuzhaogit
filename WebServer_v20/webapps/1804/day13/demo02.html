@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript"
+		src="js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript">
+			var arr = [['1','2','3'],
+			           ['4','5','6'],
+			           ['7','8','9']]
+			
+			function changefn(){
+				//清空城市的select
+				$("select:last").html("<option>请选择</option>")
+				
+				//得到用户选择的option里面的Value值
+				var index = $("select:first").val()
+				var citys = arr[index]
+				//alert(citys)
+				//判断如果citys有值
+				if(citys){
+					for(var i=0;i<citys.length;i++){
+						//得到每一个城市
+						var city = citys[i]
+						//创建option元素
+						var $opt = $("<option></option>")
+						//把城市名称添加到option中
+						$opt.text(city)
+						//把option添加到select中
+						$("select:last").append($opt)
+						
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<select onchange="changefn()">
+			<option>请选择</option>
+			<option value="0">河北</option>
+			<option value="1">黑龙江</option>
+			<option value="2">山西</option>
+		</select>
+		<select>
+			<option>请选择</option>
+		</select>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function pf(){
+				//1.得到页面中文本框
+				var input = document.getElementById("myinput");
+				//2.得到有页面中显示结果的div
+				var div = document.getElementById("resultdiv");
+				//3.得到输入的内容
+				var x = input.value;
+				//4.判断是否是数字
+				if(isNaN(x)){//不是数字
+					div.innerText="输入错误"
+				}else{//是数字
+					div.innerText=x*x;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="myinput">
+		<input type="button" onclick="pf()" value="平方">
+		<div id="resultdiv">
+			
+		</div>
+	</body>
+</html>

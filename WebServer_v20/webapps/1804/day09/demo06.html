@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>简易计算器功能</title>
+		<style type="text/css">
+			#big{
+				width: 197px;
+				height: 247px;
+				margin: 0 auto;
+				border: 1px solid red;
+				border-radius: 4px;
+				background-color: rgba(255,0,0,0.3);
+			}
+			p{
+				width: 141px;
+				height: 42px;
+				margin: 2px 2px;
+				border: 1px solid red;
+				float: left;
+				border-radius: 4px;
+				overflow: hidden;
+				display: block;
+				
+			}
+			
+			#input{
+				width: 45px;
+				height: 45px;
+				border: 1px solid red;
+				margin: 2px 2px;
+				background-color: pink;
+				border-radius: 4px;
+			}
+			
+			#downsmall input{
+				width: 45px;
+				height: 45px;
+				border: 1px solid red;
+				margin: 2px 2px;
+				float: left;
+				background-color: pink;
+				border-radius: 4px;
+			}
+			
+		</style>
+		<script type="text/javascript">
+			function myfn(btn){
+				//alert(btn.value);
+				
+				//得到显示结果的p标签
+				var p = document.getElementById("result");
+				if(btn.value=="C"){
+					p.innerText = "";
+				}else if(btn.value=="="){
+					p.innerText = eval(p.innerText);
+				}else{//数字和运算符
+					//把按钮内容取出显示到p标签中
+					p.innerText += btn.value;
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div id="big">
+			<div id="topsmall">
+				<p id="result" ></p>
+				<input id="input" type="button" value="C" onclick="myfn(this)">
+			</div>
+			<div id="downsmall">
+				<input type="button" value="7" onclick="myfn(this)">
+				<input type="button" value="8" onclick="myfn(this)">
+				<input type="button" value="9" onclick="myfn(this)">
+				<input type="button" value="/" onclick="myfn(this)">
+				<input type="button" value="4" onclick="myfn(this)">
+				<input type="button" value="5" onclick="myfn(this)">
+				<input type="button" value="6" onclick="myfn(this)">
+				<input type="button" value="*" onclick="myfn(this)">
+				<input type="button" value="1" onclick="myfn(this)">
+				<input type="button" value="2" onclick="myfn(this)">
+				<input type="button" value="3" onclick="myfn(this)">
+				<input type="button" value="-" onclick="myfn(this)">
+				<input type="button" value="0" onclick="myfn(this)">
+				<input type="button" value="." onclick="myfn(this)">
+				<input type="button" value="=" onclick="myfn(this)">
+				<input type="button" value="+" onclick="myfn(this)">
+			</div>
+		</div>
+	</body>
+</html>

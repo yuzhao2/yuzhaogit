@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+	<!-- 派生选择器(后代选择器) -->
+		<style type="text/css">
+			/*	后代选择器*/
+			/*#d1 .c1 span{
+				color: red
+			}
+			div .c2 span{
+				color:white;
+				background-color: blue
+			} */
+			
+			/*	子元素先择器	*/
+			/* #d1>.c1>span{
+				color: red
+			}
+			
+			.c2>span{
+				background-color: yellow
+			}
+			
+			p span{
+				color: blue
+			} */
+			
+			/*	分组选择器	*/
+			ul li a, input[type="text"], .c1>p>span,h1{
+				background-color: green;
+			}
+			
+			/* 任意元素	*/	
+			*{
+				border: 1px solid red;
+			}			
+			
+			html{
+				border: 1px solid blue;
+			}
+			
+			body{
+				border: 2px solid black;
+			}
+		</style>
+		
+	</head>
+	
+	<body>
+		<h1>啦啦啦</h1>
+		<input type="text">
+		<input type="password">
+		<ul>
+		  <li> 打篮球 </li>
+		  <li> 王者农药 </li>
+		  <li> 搞对象 </li>
+		  <li> <a href="#">吃鸡</a> </li>
+		</ul>
+
+		<div id="d1">
+			<div class="c1">
+				<span>span1</span>
+				<p><span>span2</span></p>
+			</div>
+		</div>
+		
+		<div id="d2">
+			<div class="c2">
+				<span>span3</span>
+				<p><span>span5</span></p>
+			</div>
+		</div>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

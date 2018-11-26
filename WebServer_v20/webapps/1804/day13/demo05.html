@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript"
+				src="js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript">
+			function myfn(){
+				alert("按钮点击了")
+			}
+			$(function(){
+				//页面加载完成后3秒后执行按钮事件
+				/* setTimeout(function(){
+					//alert("aaa")
+					//模拟点击事件
+					$("input").trigger("click")
+					
+				},3000) */
+				$("div").hover(function(){
+					$("div").css("color","red")
+				},function(){
+					$("div").css("color","green")
+				})
+			})
+		</script>
+		<style type="text/css">
+			div{
+				width: 200xpx;
+				height: 200px;
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="按钮" onclick="myfn()">
+		<div>abcd</div>
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			/* 创建正则对象的两种方式 */
+			//第一个/后面写正则的规则 第二个/写模式
+			//模式： i 忽略大小写  g 全局查找
+			var reg1 = /^a/i;//a开头 加了i 代表忽略大小写
+			reg1 = /z$/;//z结尾
+			reg1 = /\d{2}/;//包含任意的两位数字
+			reg1 = /\d{3,5}/;//包含任意的3-5位数字
+			//m开头d结尾 内部包含6-8个数字
+			reg1 = /^m\d{6,8}d$/;
+			//任意字母数字下划线6-10位
+			reg1 = /\w{6,10}/;
+			
+			//第二种创建方式
+			//第一个参数写正则的规则 第二个参数写模式
+			//模式可以不写
+			var reg2 = new RegExp("^a","i");
+			//m开头d结尾 内部包含6-8个数字  如果出现\需要转义
+			reg2 = new RegExp("^m\\d{6,8}d$");
+			
+			/* 正则相关的函数 */
+			//1.正则对象相关的函数
+			//查找内容的函数
+			var str = "You can you up no can no b b";
+			/* var reg = /no/; */
+			//查找函数 exec
+			//alert(reg.exec(str));
+			//全局查找 第一次执行得到的第一次出现的内容
+			//第二次得到第二次出现的内容 直到找不到后得到null
+			/* reg = /no/g;
+			alert(reg.exec(str));
+			alert(reg.exec(str));
+			alert(reg.exec(str)); */
+			
+			//校验函数 判断字符串是否符合正则的规则
+			/* var reg = /^you/i;
+			alert(reg.test(str)); */
+			
+			//2.字符串和正则相关的函数
+			//查找内容的函数	全局查找会把字符串中出现的所有字符
+			//条件的内容找到 并且放到一个数组中
+			/* var reg3 = /no/g;
+			alert(str.match(reg3)); */
+			
+			//查找内容并替换
+			var reg4 = /no/g;
+			alert(str.replace(reg4,"bu"));
+			
+			//练习： 页面中添加文本输入框 和一个按钮 输入完内容后
+			//点击按钮 如果是以s开头并且包含3-5个数字以m结尾
+			//则laert true   否则 false
+			function fn(){
+				var input = document.getElementById("myinput").value;
+				var reg = new RegExp("^s\\d{3,5}m$","i");
+				alert(reg.test(input));
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<input type="text" placeholder="请输入内容" id="myinput">
+		<input type="button" onclick="fn()" value="点点你试试">
+	</body>
+</html>

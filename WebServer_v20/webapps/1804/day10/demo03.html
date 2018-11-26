@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			var count = 4;
+			//开启定时器   获得定时器id信息
+			var timeId = setInterval(function(){
+				console.log(--count);
+				//得到h1
+				var h1 = document.getElementById("mytime");
+				h1.innerHTML = count;
+				if(count==0){
+					h1.innerHTML = "Boom!";
+					clearInterval(timeId);
+				}
+			},1000);
+		</script>
+	</head>
+	<body>
+		<h1 id="mytime"></h1>
+	</body>
+</html>

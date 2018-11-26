@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			#big{
+				width: 500px;
+				height: 500px;
+				border: 1px solid red;
+			}
+			.red{
+				width: 30px;
+				height: 30px;
+				background-color: red;
+				margin: 3px;
+				display: inline-block;
+			}
+		</style>
+		<script type="text/javascript">
+			function fn(){
+				var div = document.getElementById("big");
+				for(var i=1; i<=10; i++){
+					div.innerHTML+="<div class='red'></div>"
+					for(var j=1; j<i; j++){
+						div.innerHTML+="<div class='red'></div>"
+					}
+					div.innerHTML+="<div></div>"
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" onclick="fn()" value="点我试试">
+		<div id="big">
+			
+		</div>
+	</body>
+</html>

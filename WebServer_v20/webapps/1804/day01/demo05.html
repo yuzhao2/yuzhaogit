@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- alt:当图片不能正常显示的时候显示文本 
+	src:图片的路径
+	1.相对路径：相对于当前的页面文件，如果是同级文件直接写文件名
+		如果是上级文件则../文件名	如果是下级	文件夹名/文件名
+	2.绝对路径：完整路径，
+	如果访问的图片是站外资源则必须使用绝对路径，
+	这种称为盗链，好处不占自家资源，
+	坏处	人家换地址	自己就不显示了
+-->
+	<img width="500px" height="400px" alt="这是一个美女图片" src="../imgs/1245069.jpg">	
+	<img width="100%" alt="完整路径" src="http://cdn.tmooc.cn/tmooc-web/imgad/2018/6/22//FC4D84357B5146A09B7F6BC31BCF75C6.jpg">
+	<hr>
+	<!-- title:鼠标悬停的图片上时显示的内容 -->
+	<!-- width/height:设置图片的宽高，单位为px像素或百分比 -->
+	<img width="500px" height="400px" alt="这也是一张美女图片" src="../imgs/1188262.jpg"
+	title="路飞的女朋友">
+	
+</body>
+</html>

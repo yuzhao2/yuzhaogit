@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function addfn(){
+				var arr = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg"];
+				var input = document.getElementById("myinput").value;
+				for(var i =0; i<arr.length; i++){
+					if(input==arr[i]){
+						document.body.innerHTML+= "<img src='../imgs/"+arr[i]+"'>";
+						return;
+					}
+				}
+				document.body.innerHTML+="<h1>没有您选择的美女</h1>"
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="myinput" placeholder="请输入要查看的图片">
+		<input type="button" onclick="addfn()" value="点我试试">
+	</body>
+</html>

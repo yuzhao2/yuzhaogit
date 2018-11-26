@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript"
+			src="js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript">
+			/* $(function(){
+				$("table,tr").children().css("border","1px solid red")
+			}) */
+			$(function(){
+				$("input[value='加入购物车']").click(function(){
+					//通过按钮 得到上级td 再得到td的所有兄弟td
+					//从所有兄弟td中得到第一个和第二个
+					var name = $(this).parent().siblings().eq(0).text();
+					//alert(name)
+					var price = $(this).parent().siblings().eq(1).text();
+					//alert(price)
+					//var repertory = $(this).parent().siblings().eq(2).text();
+				
+					//创建tr
+					var $tr = $("<tr></tr>");
+					//创建5个td
+					var $nametd = $("<td>"+name+"</td>");
+					var $pricetd = $("<td>"+price+"</td>");
+					var $counttd = 
+						$("<td><input type='button' value='-' onclick='countfn(-1)'>"
+								+"<span>1</span>"
+								+"<input type='button' value='+' onclick='countfn(1)'></td>");
+					var $moneytd = $("<td>"+price+"</td>")
+					var $deltd = $("<td><input type='button' value='删除' onclick='delfn(this)'></td>");
+					//把5个td装进tr
+					$tr.append($nametd);
+					$tr.append($pricetd);
+					$tr.append($counttd);
+					$tr.append($moneytd);
+					$tr.append($deltd);
+					//把tr插入到总价的上边
+					$("#total").before($tr);
+				
+					//计算总价
+					calfn();
+				})
+			})
+			//删除按钮函数
+			function delfn(obj){
+				//通过按钮得到上级td再得到上级tr 然后删掉
+				$(obj).parent().parent().remove();
+				//计算总价
+				calfn();
+			}
+			//数量增删函数
+			function countfn(num){
+				//获取事件源就是得到的按钮
+				var btn = event.target;
+				//得到按钮的span兄弟 里面的数值
+				var count = parseInt($(btn).siblings("span").text());
+				//进行+1或-1的运算
+				count+=num;
+				//如果计算数值小于等于0 则取消事件
+				if(count<=0){
+					return false;
+				}
+				//把值放回去
+				$(btn).siblings("span").text(count);
+				
+				//得到商品单价 通过按钮得到td 再得到td的哥哥
+				var price = parseFloat($(btn).parent().prev().text());
+				//alert(price)
+				$(btn).parent().next().text(count*price);
+				
+				//计算总价
+				calfn();
+			}
+			
+			//计算总价函数
+			function calfn(){
+				var total = 0;
+				//得到第二个table里面的所有tr
+				$("table:eq(1) tr").each(function(){
+					//得到每一行的金额
+					var money = 
+						parseFloat($(this).children().eq(3).text());
+					//alert(money)
+					//判断得到的金额非NaN
+					if(money){
+						total += money;
+					}
+				})
+				//alert(total)
+				//把总价显示到页面中
+				$("#total td").text("总价："+total);
+				
+			}
+		</script>
+		<style type="text/css">
+			body{
+				/*	让整个页面内容居中	*/
+				text-align: center;
+			}
+			table{
+				width: 80%;
+				margin: 0 auto;
+				border: 1px solid red;
+				/*	让表格和单元格边框合并成一条线	*/
+				border-collapse: collapse;
+			}
+			th,td{
+				border: 1px solid red;
+			}
+			#total{
+				text-align: right;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>特价商品</h1>
+		<table>
+			<tr>
+				<th>商品名称</th>
+				<th>商品单价</th>
+				<th>商品库存</th>
+				<th>好评率</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td>水杯</td>
+				<td>25</td>
+				<td>3</td>
+				<td>89</td>
+				<td><input type="button" value="加入购物车"></td>
+			</tr>
+			<tr>
+				<td>鼠标</td>
+				<td>50</td>
+				<td>100</td>
+				<td>92</td>
+				<td><input type="button" value="加入购物车"></td>
+			</tr>
+			<tr>
+				<td>键盘</td>
+				<td>120</td>
+				<td>30</td>
+				<td>95</td>
+				<td><input type="button" value="加入购物车"></td>
+			</tr>
+			<tr>
+				<td>苹果电脑</td>
+				<td>6888</td>
+				<td>10</td>
+				<td>98</td>
+				<td><input type="button" value="加入购物车"></td>
+			</tr>
+			<tr>
+				<td>达内学习卡</td>
+				<td>9888</td>
+				<td>1000</td>
+				<td>100</td>
+				<td><input type="button" value="加入购物车"></td>
+			</tr>
+		</table>
+		<h1>购物车</h1>
+		<table>
+			<tr>
+				<th>商品名称</th>
+				<th>单价</th>
+				<th>数量</th>
+				<th>金额</th>
+				<th>操作</th>
+			</tr>
+			<tr id="total">
+				<td colspan="5">总价:</td>
+			</tr>
+		</table>
+	</body>
+</html>

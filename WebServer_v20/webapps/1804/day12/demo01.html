@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>QQ好友分组</title>
+		<script type="text/javascript">
+			//加载完成事件
+			onload = function(){
+				closeAll();//关闭所有分组里面的ul
+			}
+			
+			function closeAll(){
+				//得到所有分组的li
+				var grouplis = document.getElementsByClassName("group");
+				//alert(grouplis.length);
+				//遍历每一个li
+				for(var i=0;i<grouplis.length;i++){
+					//得到每一个li
+					var li = grouplis[i];
+					//得到li里面的ul
+					var ul = li.getElementsByTagName("ul")[0];
+					//让ul隐藏
+					ul.style.display = "none";
+				}
+			}
+			//ul事件
+			function clickfn(){
+				
+				//获取事件源
+				var obj = event.target||event.srcElement;
+				//判断是否是分组li
+				if(obj.className=="group"){
+					//得到li里面的ul
+					var ul = obj.getElementsByTagName("ul")[0];
+					//判断ul隐藏 则让其显示 显示则让其隐藏
+					if(ul.style.display=="none"){
+						closeAll();//关闭所有ul
+						//让ul显示
+						ul.style.display = "block";
+					}else{
+						//让ul隐藏
+						ul.style.display = "none";
+					}
+					//alert(ul.style.display);
+					
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<ul onclick="clickfn()">
+			<li class="group">大学好友
+				<ul>
+					<li>刘能</li>
+					<li>赵四</li>
+					<li>彭于晏</li>
+				</ul>
+			</li>
+			<li class="group">工作好友
+				<ul>
+					<li>马云</li>
+					<li>王健林</li>
+					<li>苍老师</li>
+				</ul>
+			</li>
+			<li class="group">美女好友
+				<ul>
+					<li>杨幂</li>
+					<li>迪丽热巴</li>
+				</ul>
+			</li>
+			<li class="group">亲戚
+				<ul>
+					<li>习大大</li>
+					<li>驴妈妈</li>
+					<li>凤姐</li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+</html>

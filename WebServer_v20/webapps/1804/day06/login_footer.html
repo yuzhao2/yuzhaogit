@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			body{
+				font: 12px "simhei", Arial, Helvetica, sans-serif;
+			    color: #666;
+			    /*去掉元素自带的内外边距*/
+			    margin: 0px;
+			    padding: 0px;
+			    /*页面的背景颜色*/
+			    background-color: #f5f5f5;
+			}
+			
+			footer{
+				width: 1000px;
+				margin: 0 auto;
+				background-color: white;
+				overflow: hidden;
+				padding: 20px 0;
+			}
+			/*	底部3个div	*/
+			footer div{
+				width: 333px;
+				float: left;
+			}
+			/* 选中所有ul	*/
+			#footer_center ul{
+				list-style-type: none;/*	去掉无序列表的点	*/
+				padding: 0;/*	去掉无序列表的默认内边距	*/
+				text-align: center;/* 让后代元素居中	*/
+			}
+			/*	选中标题li		*/
+			#footer_center>ul>li{
+				float: left;
+				width: 111px;
+				font-weight: bold;/*加粗*/
+				font-size: 14px;
+				
+			}
+			/* 选中内容li	*/
+			#footer_center>ul>li>ul{
+				font-weight: normal;
+				font-size: 12px;
+				margin: 5px 0;
+			}
+			/*	中间区域所有超链接	*/
+			#footer_center a{
+				text-decoration: none;
+				color: #666;
+			}
+			/*	让图片左对齐	*/
+			#imgli{
+				position: relative;
+				right: 5px;
+			}
+			/*	让左则两张图片向右移动	*/
+			#footer_left img{
+				margin-left: 30px;
+			}
+			/*	选中右侧div中的	左则div*/
+			#footer_right div{
+				width: 166px;
+			}
+			/* 设置h3的外边距	*/
+			#footer_right div h3{
+				margin: 4px;
+			}
+			/* 页面最下面的文本	*/
+			footer p{
+				clear: both;/* 上面有浮起元素 也不会往上顶*/
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<footer>
+			<div id="footer_left">
+				<img alt="" src="../images/footer/logo.png">
+				<img alt="" src="../images/footer/footerFont.png">
+			</div>
+			<div id="footer_center">
+				<ul>
+					<li><a href="#">买家帮助</a>
+						<ul>
+							<li><a href="#">新手指南</a></li>
+							<li><a href="#">服务保障</a></li>
+							<li><a href="#">常见问题</a></li>
+						</ul>
+					</li>
+					<li><a href="#">商家帮助</a>
+						<ul>
+							<li><a href="#">商家入驻</a></li>
+							<li><a href="#">商家后台</a></li>
+						</ul>
+					</li>
+					<li><a href="#">关于我们</a>
+						<ul>
+							<li><a href="#">关于达内</a></li>
+							<li><a href="#">联系我们</a></li>
+							<li id="imgli">
+								<a href="#"><img alt="" src="../images/footer/sinablog.png"></a>
+								<a href="#"><img alt="" src="../images/footer/wechat.png"></a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div id="footer_right">
+				<div>
+					<h3>学子商城客户端</h3>
+					<img alt="" src="../images/footer/android.png">
+					<img alt="" src="../images/footer/ios.png">
+				</div>
+				<div>
+					<img alt="" src="../images/footer/erweima.png">
+				</div>
+			</div>
+			<p>© 2017 达内集团有限公司 版权所有 京ICP证xxxxxxxxxxx</p>
+		</footer>
+	</body>
+</html>

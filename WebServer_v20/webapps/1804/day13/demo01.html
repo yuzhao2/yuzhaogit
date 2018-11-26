@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript"
+		src="js/jquery-1.4.2.min.js"></script>
+		
+		<script type="text/javascript">
+			$(function(){
+				//隐藏所有分组内的ul
+				$(".group ul").css("display","none");
+				//动态绑定点击事件
+				$(".group").click(function(){
+					//判断当前点击元素ul的子元素是显示还是隐藏
+					//得到元素的子元素函数children()
+					if($(this).children().css("display")=="none"){
+						//隐藏所有分组内的ul
+						$(".group ul").css("display","none");
+						//让点击的元素显示
+						$(this).children().css("display","block");
+					}else{//显示
+						//让点击元素隐藏
+						$(this).children().css("display","none");
+					}
+				})
+				
+			})
+		</script>
+		
+	</head>
+	<body>
+		<ul>
+			<li class="group">美女好友
+				<ul>
+					<li>武则天</li>
+					<li>貂蝉</li>
+					<li>孙尚香</li>
+				</ul>
+			</li>
+			<li class="group">战士好友
+				<ul>
+					<li>吕布</li>
+					<li>关羽</li>
+					<li>张飞</li>
+				</ul>
+			</li>
+			<li class="group">神仙好友
+				<ul>
+					<li>孙悟空</li>
+					<li>猪八戒</li>
+					<li>杨戬</li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+</html>

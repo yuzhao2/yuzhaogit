@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			/* var str = "alert('abc')";
+			eval(str);
+			var str2 = "function fn(){alert('fn run!');}fn()";
+			eval(str2); */
+			
+			function myfn(){
+				var info = myinput.value;
+				result.innerText = eval(info);
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="myinput">
+		<input type="button" value="执行" onclick="myfn()">
+		<div id="result"></div>
+	</body>
+</html>

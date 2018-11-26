@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<script type="text/javascript">
+			
+			onload = function(){
+				/*	获取元素的几种方式	*/
+				/*	1.通过id获取元素	*/
+				var input = document.getElementById("myinput");
+				
+				/*	2.通过标签名获取元素	*/
+				var inputs = document.getElementsByTagName("input");
+				
+				/*	3.通过层级关系查找元素	*/
+				/*	3.1得到上级元素(父元素)	*/
+				var mydiv = input.parentElement;
+				
+				/*	3.2得到子元素们	和 元素内部的文本	*/
+				var nodes = mydiv.childNodes;
+				
+				/*	得到子元素的数量	*/
+				var elementsCount = mydiv.childElementCount;
+				
+				/*	3.3得到元素的兄弟元素们	*/
+				var nodes2 = input.parentElement.childNodes;
+				
+				/*	4.通过name属性的值获取元素	*/
+				var radius = document.getElementsByTagName("gender");
+				
+				/*	5.通过class属性的值获取元素	*/
+				var elements = document.getElementsByClassName("c1");
+				
+			}
+		</script>
+		
+	</head>
+	<body>
+		<div>
+			<input type="text" id="myinput">
+			<input type="radio" name="gender">
+			<input type="radio" name="gender">
+		</div>
+	</body>
+</html>

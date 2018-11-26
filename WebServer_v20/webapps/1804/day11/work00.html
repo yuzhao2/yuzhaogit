@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			#successh3{
+				float: left;
+			}
+			#failureh3{
+				float: left;
+			}
+			img{
+				width: 30px;
+				height: 30px;
+				position: absolute;
+			}
+		</style>
+		<script type="text/javascript">
+			setInterval(function(){
+				var img = document.createElement("img");
+				img.src = "../imgs/1.jpg";
+				img.style.top = parseInt(Math.random()*800)+"px";
+				img.style.left = "0px";
+				img.onmouseover = removefn;
+				
+				document.body.appendChild(img);
+				
+			},1000)
+			function removefn(){
+				this.parentElement.removeChild(this);
+			}
+			serInterval(function(){
+				var img = document.getElementsByTagName("img");
+				for(var i=0;i<imgs.length;i++){
+					var img = imgs[i];
+					var oldLeft = parseInt(img.style.left);
+					oldLeft += 5;
+					img.style.left = oldLeft+"px";
+				}
+			},10)
+			
+		</script>
+	</head>
+	<body>
+		<h3 id="successh3">成功次数:0</h3>
+		<h3 id="failureh3">失败次数:0</h3>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			.ok{
+				color: green;
+			}
+			
+			.error{
+				color: red;
+			}
+		</style>
+		<script type="text/javascript">
+			function check(){
+				//得到用户输入的信息
+				var input1 = document.getElementById("myinput1").value;
+				var input2 = document.getElementById("myinput2").value;
+				var reg = new RegExp("^\\w{6,10}$","i");
+				var span1 = document.getElementById("span1");
+				var span2 = document.getElementById("span2");
+				//判断是否符合条件
+				if(reg.test(input1)){
+					span1.className="ok";
+				}else{
+					span1.className="error";
+				}
+				
+				if(reg.test(input2)){
+					span2.className="ok";
+				}else{
+					span2.className="error";
+				}
+			}
+		
+		</script>
+	</head>
+	<body>
+		<input type="text" placeholder="请输入用户名" id="myinput1">
+		<span id="span1" class="a">数字字母或下划线6-10</span><br>
+		<input type="password" placeholder="请输入密码" id="myinput2">
+		<span id="span2" class="b">数字字母或下划线6-10</span><br>
+		<input type="button" onclick="check()" value="校验">
+	</body>
+</html>

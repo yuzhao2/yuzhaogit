@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			//创建数组的两种方式		创建出来的数组是一样的
+			//数组中可以添加任意类型的数据
+			var arr1 = ["abc",18,true];
+			var arr2 = new Array();//创建一个空的数组
+			
+			//往数组里添加数据
+			arr2.push("李白");
+			arr2.push(20);
+			
+			//在对话框中显示
+			//alert(arr1);
+			//alert(arr2);
+			
+			//修改数组长度
+			//arr1.length=1;
+			//alert(arr1);//abc
+			
+			//从数组中获取数据
+			//alert(arr1[2]);
+			
+			//删除数组中的数据 长度没有发生改变
+			//delete arr1[1];
+			//alert(arr1[1]);
+			
+			//数组内容反转
+			var arr3 = [1,2,3];
+			//arr3.reverse();
+			//alert(arr3);//3,2,1
+			
+			//数组排序
+			var arr4 = [1,12,3,20,28,5,52];
+			//sort()函数的排序规则，是将内容以字符串的形式进行排序
+			//先比较第一个字符的字符编码，进行升序排序，如果相同则
+			//比价第二个，以此类推
+			//arr4.sort();
+			//alert(arr4);
+			
+			//如果需要让数组中的内容以数值形式升降序
+			//则需要自定义排序函数
+			/* function sortfn(a,b){
+				//如果升序
+				return a-b;
+				//如果降序
+				//return b-a
+			}
+			arr4.sort(sortfn);
+			alert(arr4); */
+			//如果数组中存放的是学生对象类型，
+			//按照学生年龄升序排序，则a.age-b.age
+			//按照学生数学成绩降序排序，则b.math-a.math
+			
+			//匿名函数的写法
+			arr4.sort(function(a,b){
+				return a-b;
+			});
+			alert(arr4);
+			
+			//数组遍历
+			for(var i=0;i<arr4.length;i++){
+				alert(arr4[i]);
+			}
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

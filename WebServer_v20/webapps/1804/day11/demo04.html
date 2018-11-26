@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>鼠标事件</title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+			}
+			img{
+				/*	修改img元素的定位方式	*/
+				width: 80px;
+				height: 90px;
+				position: absolute;
+			}
+		</style>
+		<script type="text/javascript">
+			//鼠标按下事件
+			function downfn(e){
+				//那个有值	取那个 得到事件对象
+				e = e||event;
+					//等效上面的代码
+				//e = e? e : event;
+					
+				//alert(event);
+				
+				console.log("按下 x="+e.clientX+" y="+e.clientY);
+			}
+			//鼠标抬起事件
+			function upfn(){
+				console.log("松手");
+			}
+			//鼠标移动事件
+			function movefn(){
+			//	console.log("移动");
+			}
+			
+			function addfn(){
+				var img = document.createElement("img");
+				img.src = "../imgs/1.jpg"
+				img.style.left = event.clientX+"px";
+				img.style.top = event.clientY+"px";
+				document.body.appendChild(img);
+				
+			}
+			
+		</script>
+	</head>
+	<body onmousemove="addfn()">
+		<div onmousedown="downfn(event)" onmouseup="upfn()" onmousemove="movefn()"></div>
+	</body>
+</html>

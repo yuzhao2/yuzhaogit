@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function fn1(){
+				var input = document.getElementById('myinput');
+				alert(input.value);
+			}
+		</script>
+	</head>
+	<body>
+		<!-- 页面中添加一个按钮和一个文本输入框
+			实现当点击按钮时候弹出对话框
+			把文本框的内容显示到对话框中
+			步骤：
+			1.搭建界面 添加按钮和文本框  给文本框添加id为myinput
+			2.给按钮添加点击事件 点击事件中调用js函数fn1()
+			3.在script标签中声明fn1函数
+			4.在fn1函数中获取页面中的文本框元素对象
+			5.把文本框对象的Value属性值写在alert中 搞定！
+		 -->
+		<input type="text" id="myinput">
+		<input type="button" onclick="fn1()" value="有种点我试试">
+		<div id="mydiv">
+			
+		</div>
+	</body>
+</html>

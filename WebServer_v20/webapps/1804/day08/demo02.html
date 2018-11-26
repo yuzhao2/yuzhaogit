@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function addfn(){
+				//得到用户输入的内容
+				var input1 = document.getElementById("myinput1").value;
+				var input2 = document.getElementById("myinput2").value;
+				//var div = document.getElementById("big");
+				//分隔每一个关键字并装到数组中
+				var arr = input1.split(input2);
+				//准备装HTML的字符串 并添加一个ul开头
+				var str = "<ul>";
+				//遍历每一个关键字 并把关键字装进li中的a标签中
+				for(var i=0;i<arr.length;i++){
+					str +="<li><a href='../imgs/1.jpg' target='_blank'>"+arr[i]+"</a></li>"
+				}
+				//追加ul尾巴
+				str+="</ul>";
+				//div.innerHTML+=str;
+				//把ul添加到body中
+				document.body.innerHTML+=str;
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="myinput1">
+		<input type="text" id="myinput2">
+		<input type="button" value="点我试试" onclick="addfn()">
+		<!-- <div id="big">
+			
+		</div> -->
+	</body>
+</html>
